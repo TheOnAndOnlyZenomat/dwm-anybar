@@ -11,6 +11,10 @@ static const int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int usealtbar          = 1;        /* 1 means use non-dwm status bar */
+static const char *altbarclass      = "Polybar"; /* Alternate bar class name */
+static const char *alttrayname      = "tray";    /* Polybar tray instance name */
+static const char *altbarcmd        = "/home/adrian/.config/polybar/launch_polybar.sh"; /* Alternate bar launch command */
 static const char *fonts[]          = { "Tamzen:size=12:antialias=true", "JoyPixels:pixelsize=11:antialias=true" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]	    = "#1c1e26";
