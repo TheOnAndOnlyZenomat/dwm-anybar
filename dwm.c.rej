@@ -1,10 +1,16 @@
 --- /dev/null
 +++ /dev/null
-@@ -1251,6 +1254,7 @@ propertynotify(XEvent *e)
- void
- quit(const Arg *arg)
- {
-+	if(arg->i) restart = 1;
- 	running = 0;
- }
- 
+@@ -2359,10 +2580,12 @@ main(int argc, char *argv[])
+ 		fputs("warning: no locale support\n", stderr);
+ 	if (!(dpy = XOpenDisplay(NULL)))
+ 		die("dwm: cannot open display");
++	if (!(xcon = XGetXCBConnection(dpy)))
++		die("dwm: cannot get xcb connection\n");
+ 	checkotherwm();
+ 	setup();
+ #ifdef __OpenBSD__
+-	if (pledge("stdio rpath proc exec", NULL) == -1)
++	if (pledge("stdio rpath proc exec ps", NULL) == -1)
+ 		die("pledge");
+ #endif /* __OpenBSD__ */
+ 	scan();
