@@ -28,6 +28,11 @@ static const char *colors[][3]      = {
     [SchemeInfoNorm]  = { col_gray3, col_cyan,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 
+static const char *const autostart[] = { /* please replace 2 with maximum number of arguments from autostart array */
+    "st", NULL,
+    NULL
+};
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
